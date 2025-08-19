@@ -79,19 +79,6 @@ ${content}
 
 Return only the JSON array, no additional text.`
 
-Format your response as a JSON array with this structure:
-[
-  {
-    "question": "What is the specific question here?",
-    "answer": "The precise answer here"
-  }
-]
-
-Content to create flashcards from:
-${content}
-
-Return only the JSON array, no additional text.`
-
     const completion = await openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-3.5-turbo',
       messages: [

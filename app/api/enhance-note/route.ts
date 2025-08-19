@@ -99,7 +99,7 @@ ${originalContent}
     
     let prompt = `You are an expert educational assistant helping to enhance student notes. 
     The content is from a ${subject} class. Please enhance this content to make it more 
-    organized, clear, and study-friendly.\n\nOriginal content:\n${originalContent}\n\n`
+    organized, clear, and study-friendly.\n\nOriginal content:\n${originalContent}\n\n`;
 
     // Add enhancement instructions based on settings
     const enhancements: string[] = []
