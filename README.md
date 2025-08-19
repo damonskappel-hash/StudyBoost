@@ -280,3 +280,4 @@ For support, email support@studyboost.com or create an issue in the repository.
 - [ ] Advanced subject-specific models
 - [ ] Flashcard generation
 - [ ] Study schedule recommendations
+// Force latest commit deployment
