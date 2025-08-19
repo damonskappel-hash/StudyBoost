@@ -26,7 +26,7 @@ export async function extractTextFromImage(file: File): Promise<string> {
       }
     )
     
-    let extractedText = result.data.text || ''
+    const extractedText = result.data.text || ''
     console.log('OCR processing completed, text length:', extractedText.length)
     
     if (!extractedText.trim()) {

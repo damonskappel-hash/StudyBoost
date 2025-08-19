@@ -78,6 +78,8 @@ export default function SubjectDetailPage() {
 
   // Filter and sort notes
   const filteredAndSortedNotes = useMemo(() => {
+    if (!subjectNotes) return []
+    
     let filtered = subjectNotes
 
     // Filter by search term
@@ -117,6 +119,8 @@ export default function SubjectDetailPage() {
 
   // Get subject stats
   const subjectStats = useMemo(() => {
+    if (!subjectNotes) return { total: 0, completed: 0, processing: 0, failed: 0, totalWords: 0 }
+    
     const total = subjectNotes.length
     const completed = subjectNotes.filter(note => note.enhancementStatus === 'completed').length
     const processing = subjectNotes.filter(note => note.enhancementStatus === 'processing').length
