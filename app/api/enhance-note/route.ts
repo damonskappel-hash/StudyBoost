@@ -38,13 +38,7 @@ export async function POST(request: NextRequest) {
 
     // Mock enhancement for testing (remove this when API key is set)
     if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'your-api-key-here') {
-      const mockEnhancedContent = `# Enhanced ${subject} Notes
-
-## Key Terms
-- **Term**: Definition would appear here with real API
-- **Concept**: Explanation would appear here with real API
-
----
+      const mockEnhancedContent = "# Enhanced " + subject + " Notes\n\n## Key Terms\n- **Term**: Definition would appear here with real API\n- **Concept**: Explanation would appear here with real API\n\n---\n\n" + originalContent;
 
       return NextResponse.json({
         success: true,
