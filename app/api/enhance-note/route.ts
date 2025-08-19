@@ -86,7 +86,7 @@ ${originalContent}
 - **Concept**: Explanation would appear here with real API
 
 ---
-*Note: This is a placeholder. Add OPENAI_API_KEY=sk-... to your .env.local file for real AI enhancement.*`
+*Note: This is a placeholder. Add OPENAI_API_KEY=YOUR_OPENAI_API_KEY to your .env.local file for real AI enhancement.*`
 
       return NextResponse.json({
         success: true,

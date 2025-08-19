@@ -64,7 +64,7 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 NEXT_PUBLIC_CONVEX_URL=https://...convex.cloud
 
 # OpenAI API (add this for full functionality)
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 
 # OpenAI Model (optional - defaults to gpt-3.5-turbo for cost-effective testing)
 OPENAI_MODEL=gpt-3.5-turbo
@@ -235,7 +235,7 @@ Make sure to set these in your production environment:
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
 CLERK_SECRET_KEY=sk_live_...
 NEXT_PUBLIC_CONVEX_URL=https://...convex.cloud
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ```
 
 ## Development
