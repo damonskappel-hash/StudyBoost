@@ -131,7 +131,7 @@ ${originalContent}
     Make it well-structured, easy to read, and study-friendly. 
     If you add definitions, format them as **Term**: Definition.
     If you add questions, format them as ### Study Questions followed by numbered questions.
-    If you add summaries, format them as ### Summary followed by bullet points.`
+    If you add summaries, format them as ### Summary followed by bullet points.`;
 
     const completion = await openai.chat.completions.create({
       model: model,
