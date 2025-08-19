@@ -65,17 +65,6 @@ export default function SubjectDetailPage() {
     )
   }
 
-  if (!allNotes) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading subject notes...</p>
-        </div>
-      </div>
-    )
-  }
-
   // Filter and sort notes
   const filteredAndSortedNotes = useMemo(() => {
     if (!subjectNotes) return []
@@ -129,6 +118,17 @@ export default function SubjectDetailPage() {
     
     return { total, completed, processing, failed, totalWords }
   }, [subjectNotes])
+
+  if (!allNotes) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading subject notes...</p>
+        </div>
+      </div>
+    )
+  }
 
   // Get status icon
   const getStatusIcon = (status: string) => {
