@@ -2,19 +2,13 @@ import { v } from "convex/values";
 import { action } from "./_generated/server";
 import OpenAI from "openai";
 
-// Initialize OpenAI client with API key
+// Initialize OpenAI client (reads from environment)
 const getOpenAIClient = () => {
-  // For now, use the working API key directly to test functionality
-  const apiKey = "REDACTED";
-  
-  console.log('Using hardcoded API key for testing');
-  console.log('API Key length:', apiKey.length);
-  console.log('API Key starts with:', apiKey.substring(0, 10));
-  console.log('API Key ends with:', apiKey.substring(apiKey.length - 10));
-  
-  return new OpenAI({
-    apiKey: apiKey,
-  });
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey || apiKey.trim().length < 20) {
+    throw new Error("OPENAI_API_KEY is not set or invalid in the environment");
+  }
+  return new OpenAI({ apiKey });
 };
 
 // Test action to verify OpenAI setup
