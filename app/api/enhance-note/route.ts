@@ -98,9 +98,9 @@ ${originalContent}
     const startTime = Date.now()
     
     let prompt = "You are an expert educational assistant helping to enhance student notes. ";
-    prompt += `The content is from a ${subject} class. `;
+    prompt += "The content is from a " + subject + " class. ";
     prompt += "Please enhance this content to make it more organized, clear, and study-friendly.\n\n";
-    prompt += `Original content:\n${originalContent}\n\n`;
+    prompt += "Original content:\n" + originalContent + "\n\n";
 
     // Add enhancement instructions based on settings
     const enhancements: string[] = []
@@ -127,7 +127,7 @@ ${originalContent}
       enhancements.push(enhancementPrompts.examples)
     }
 
-    prompt += `Enhancement instructions:\n${enhancements.join('\n\n')}\n\n`
+    prompt += "Enhancement instructions:\n" + enhancements.join('\n\n') + "\n\n"
     prompt += "Please provide the enhanced content in markdown format. ";
     prompt += "Make it well-structured, easy to read, and study-friendly. ";
     prompt += "If you add definitions, format them as **Term**: Definition. ";
