@@ -97,7 +97,10 @@ ${originalContent}
 
     const startTime = Date.now()
     
-    let prompt = `You are an expert educational assistant helping to enhance student notes. The content is from a ${subject} class. Please enhance this content to make it more organized, clear, and study-friendly.\n\nOriginal content:\n${originalContent}\n\n`;
+    let prompt = "You are an expert educational assistant helping to enhance student notes. ";
+    prompt += `The content is from a ${subject} class. `;
+    prompt += "Please enhance this content to make it more organized, clear, and study-friendly.\n\n";
+    prompt += `Original content:\n${originalContent}\n\n`;
 
     // Add enhancement instructions based on settings
     const enhancements: string[] = []
@@ -125,7 +128,11 @@ ${originalContent}
     }
 
     prompt += `Enhancement instructions:\n${enhancements.join('\n\n')}\n\n`
-    prompt += `Please provide the enhanced content in markdown format. Make it well-structured, easy to read, and study-friendly. If you add definitions, format them as **Term**: Definition. If you add questions, format them as ### Study Questions followed by numbered questions. If you add summaries, format them as ### Summary followed by bullet points.`;
+    prompt += "Please provide the enhanced content in markdown format. ";
+    prompt += "Make it well-structured, easy to read, and study-friendly. ";
+    prompt += "If you add definitions, format them as **Term**: Definition. ";
+    prompt += "If you add questions, format them as ### Study Questions followed by numbered questions. ";
+    prompt += "If you add summaries, format them as ### Summary followed by bullet points.";
 
     const completion = await openai.chat.completions.create({
       model: model,
