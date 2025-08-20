@@ -107,8 +107,9 @@ export default function AnalyticsPage() {
 
     // Subject performance
     const subjectStats = notes.reduce((acc, note) => {
-      if (!acc[note.subject]) {
-        acc[note.subject] = {
+      const subject = note.subject || 'Uncategorized'
+      if (!acc[subject]) {
+        acc[subject] = {
           total: 0,
           completed: 0,
           processing: 0,
@@ -116,9 +117,9 @@ export default function AnalyticsPage() {
           totalWords: 0
         }
       }
-      acc[note.subject].total++
-      acc[note.subject][note.enhancementStatus]++
-      acc[note.subject].totalWords += note.wordCount || 0
+      acc[subject].total++
+      acc[subject][note.enhancementStatus]++
+      acc[subject].totalWords += note.wordCount || 0
       return acc
     }, {} as Record<string, any>)
 
